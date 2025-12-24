@@ -1,0 +1,170 @@
+/* 🌌 COSMIC BACKGROUND */
+.settings-cosmic {
+  min-height: 100vh;
+  padding: 40px 25px;
+  color: #fff;
+  background: radial-gradient(circle at top, #43127b, #12001b 70%);
+  position: relative;
+  overflow: hidden;
+  font-family: Poppins;
+}
+
+/* Floating Orbs */
+.settings-cosmic::before,
+.settings-cosmic::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.45;
+}
+
+.settings-cosmic::before {
+  background: #9333ea;
+  top: 40px;
+  left: -120px;
+}
+
+.settings-cosmic::after {
+  background: #00eaff;
+  bottom: 80px;
+  right: -120px;
+}
+
+/* Stars */
+.mp-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mp-star {
+  position: absolute;
+  background: #ffffffaa;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+/* HEADER */
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cosmic-title h1 {
+  font-size: 34px;
+  background: linear-gradient(90deg, #ff00ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* THEME BUTTON */
+.theme-btn {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+/* GRID */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 25px;
+}
+
+/* GLASS CARD */
+.glass-card {
+  background: rgba(255,255,255,0.12);
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.glass-card h2 {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* INPUT */
+.glass-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.15);
+  color: white;
+  margin-bottom: 12px;
+}
+
+/* BUTTONS */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff00ff, #00eaff);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.delete-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e53935;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #757575;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+/* LOG ROW */
+.log-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 0;
+}
+
+/* 3D BACK BUTTON */
+.mp-back-btn-3d {
+  background: linear-gradient(145deg, #ffcc33, #e6b800);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+  box-shadow: 5px 5px 12px #bfa100, -5px -5px 12px #fff3b0;
+  transition: 0.2s;
+  z-index: 20;
+}

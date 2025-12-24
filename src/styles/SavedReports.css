@@ -1,0 +1,114 @@
+/* 🌌 MAIN COSMIC WRAPPER */
+.saved-cosmic-wrapper {
+  min-height: 100vh;
+  padding: 35px 22px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(circle at top, #3e0b6d, #12001b 70%);
+  font-family: Poppins;
+}
+
+/* ORBS */
+.saved-cosmic-wrapper::before,
+.saved-cosmic-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.45;
+}
+.saved-cosmic-wrapper::before {
+  background: #9a00ff;
+  top: 50px;
+  left: -120px;
+}
+.saved-cosmic-wrapper::after {
+  background: #00eaff;
+  bottom: 80px;
+  right: -120px;
+}
+
+/* STARS */
+.mp-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.mp-star {
+  position: absolute;
+  background: #ffffffaa;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: .3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+/* HEADER */
+.cosmic-header h1 {
+  background: linear-gradient(90deg, #ff00ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NEW BACK BUTTON */
+.cosmic-back-btn {
+  background: linear-gradient(135deg, #ff00ff, #a000e6);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 12px #a100c4, -5px -5px 12px #ff71ff;
+  transition: 0.2s;
+  z-index: 20;
+}
+
+/* GLASS CARD */
+.cosmic-glass {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* REPORT CARD */
+.report-card {
+  padding: 22px;
+  transition: 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-6px);
+}
+
+/* STATUS TAG */
+.status-tag {
+  background: linear-gradient(135deg, #ff00ff, #a000ff);
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* BUTTONS */
+.view-btn {
+  background: #7b41f3;
+  border-radius: 8px;
+}
+.download-btn {
+  background: #00c4a8;
+  border-radius: 8px;
+}
+.view-btn:hover,
+.download-btn:hover {
+  opacity: 0.85;
+}

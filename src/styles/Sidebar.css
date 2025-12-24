@@ -1,0 +1,218 @@
+/* ===============================
+   GOOGLE FONT – THE SEASON STYLE
+================================ */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SIDEBAR BASE
+================================ */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #120021, #1b0033);
+  color: #fff;
+  min-height: 100vh;
+  padding: 1rem 1.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: transform 0.35s ease;
+  z-index: 1200;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile closed */
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* Mobile open */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* ===============================
+   LOGO AREA
+================================ */
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Clickable logo */
+.sidebar-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  cursor: pointer;
+}
+
+.sidebar-logo-img {
+  width: 100px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sidebar-logo-wrapper:hover .sidebar-logo-img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.7));
+}
+
+/* ===============================
+   NAV LINKS
+================================ */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav a,
+.sidebar-main-link {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e6e6e6;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  margin: 0.3rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.sidebar-nav a:hover,
+.sidebar-main-link:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 255, 0.2),
+    rgba(0, 255, 255, 0.2)
+  );
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Active */
+.sidebar-nav a.active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 255, 0.35),
+    rgba(0, 255, 255, 0.35)
+  );
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===============================
+   DROPDOWN
+================================ */
+.dropdown-menu {
+  margin-left: 12px;
+  margin-top: 6px;
+}
+
+.dropdown-link {
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #cfcfcf !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+}
+
+.dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+}
+
+/* Arrow */
+.dropdown-arrow {
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(90deg);
+}
+
+/* ===============================
+   HAMBURGER BUTTON
+================================ */
+.hamburger-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff00ff, #7b2cbf);
+  border: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(255, 0, 255, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   MOBILE OVERLAY
+================================ */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1100;
+  display: none;
+}
+
+.sidebar-overlay.show {
+  display: block;
+}
+
+/* ===============================
+   CLOSE BUTTON (MOBILE)
+================================ */
+.close-sidebar-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}

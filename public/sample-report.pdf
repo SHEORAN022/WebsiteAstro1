@@ -1,0 +1,110 @@
+// generate-kundli-pdf.js
+const { jsPDF } = require("jspdf");
+
+// Create a new PDF document
+const doc = new jsPDF();
+
+// Coordinates & layout settings
+let x = 20;
+let y = 20;
+let lineHeight = 10;
+
+// Title
+doc.setFontSize(18);
+doc.text("Astrology / Kundli Report", x, y);
+y += lineHeight * 2;
+
+// ===== Personal Details =====
+doc.setFontSize(14);
+doc.text("Personal Details:", x, y);
+y += lineHeight;
+
+doc.setFontSize(12);
+const personalDetails = [
+  { label: "Name", value: "Rinku Sheoran" },
+  { label: "Email", value: "shorinku22@gmail.com" },
+  { label: "Phone", value: "8571980595" },
+  { label: "DOB", value: "22 Aug 2000" },
+  { label: "Place of Birth", value: "Hisar" },
+  { label: "Time of Birth", value: "02:30 AM" },
+];
+
+personalDetails.forEach(detail => {
+  doc.text(`${detail.label}: ${detail.value}`, x, y);
+  y += lineHeight;
+});
+
+y += lineHeight; // extra space before next section
+
+// ===== Astrology Details =====
+doc.setFontSize(14);
+doc.text("Astrology Details:", x, y);
+y += lineHeight;
+
+doc.setFontSize(12);
+const astrologyDetails = [
+  { label: "Zodiac Sign (Sun)", value: "Leo" },
+  { label: "Moon Sign", value: "Taurus" },
+  { label: "Lagna / Ascendant", value: "Cancer" },
+  { label: "Nakshatra", value: "Rohini" },
+  { label: "Yoga", value: "Vishkumbh" },
+  { label: "Karana", value: "Bava" },
+];
+
+astrologyDetails.forEach(detail => {
+  doc.text(`${detail.label}: ${detail.value}`, x, y);
+  y += lineHeight;
+});
+
+y += lineHeight; // extra space
+
+// ===== Planetary Positions Table =====
+doc.setFontSize(14);
+doc.text("Planetary Positions:", x, y);
+y += lineHeight;
+
+// Table headers
+doc.setFontSize(12);
+doc.setFillColor(220, 220, 220);
+doc.rect(x, y, 170, lineHeight, "F"); // header background
+doc.text("Planet", x + 5, y + 7);
+doc.text("Sign", x + 50, y + 7);
+doc.text("Degree", x + 100, y + 7);
+doc.text("House", x + 140, y + 7);
+y += lineHeight;
+
+// Table rows (mock data)
+const planets = [
+  { planet: "Sun", sign: "Leo", degree: "28°10'", house: "1" },
+  { planet: "Moon", sign: "Taurus", degree: "15°25'", house: "10" },
+  { planet: "Mars", sign: "Gemini", degree: "05°50'", house: "2" },
+  { planet: "Mercury", sign: "Virgo", degree: "12°40'", house: "1" },
+  { planet: "Jupiter", sign: "Cancer", degree: "22°15'", house: "12" },
+  { planet: "Venus", sign: "Libra", degree: "18°05'", house: "2" },
+  { planet: "Saturn", sign: "Aries", degree: "03°30'", house: "8" },
+];
+
+planets.forEach(p => {
+  doc.text(p.planet, x + 5, y + 7);
+  doc.text(p.sign, x + 50, y + 7);
+  doc.text(p.degree, x + 100, y + 7);
+  doc.text(p.house, x + 140, y + 7);
+  doc.rect(x, y, 170, lineHeight); // row border
+  y += lineHeight;
+});
+
+y += lineHeight; // extra space
+
+// ===== Notes =====
+doc.setFontSize(12);
+doc.text("Notes:", x, y);
+y += lineHeight;
+doc.text(
+  "This is a sample Kundli report generated for demonstration purposes.",
+  x,
+  y
+);
+
+// Save PDF
+doc.save("public/kundli-sample.pdf");
+console.log("Kundli PDF generated: public/kundli-sample.pdf");

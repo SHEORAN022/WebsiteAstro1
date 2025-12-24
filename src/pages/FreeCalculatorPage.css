@@ -1,0 +1,66 @@
+.fc-starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fc-star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fc-twinkle 3s infinite ease-in-out;
+}
+
+@keyframes fc-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+.fc-floating-orbs .fc-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+  z-index: 2;
+  animation: fc-float 10s infinite ease-in-out alternate;
+}
+
+@keyframes fc-float {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-40px) scale(1.1); }
+}
+
+.fc-orb.orb-1 {
+  width: 260px;
+  height: 260px;
+  background: #9333ea;
+  top: 12%;
+  left: 6%;
+}
+
+.fc-orb.orb-2 {
+  width: 310px;
+  height: 310px;
+  background: #3b82f6;
+  bottom: 12%;
+  right: 10%;
+}
+
+.fc-orb.orb-3 {
+  width: 220px;
+  height: 220px;
+  background: #ec4899;
+  top: 50%;
+  right: 25%;
+}
+
+.free-calculator-content {
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,280 @@
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0; /* BACKGROUND ONLY */
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+.floating-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; /* behind all content */
+}
+
+.floating-orbs .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);      /* smoother premium glow */
+  opacity: 0.25;           /* light glow so text is visible */
+}
+.orb-1 {
+  width: 260px;
+  height: 260px;
+  background: #9333ea;
+  top: 10%;
+  left: 5%;
+}
+
+.orb-2 {
+  width: 320px;
+  height: 320px;
+  background: #3b82f6;
+  bottom: 12%;
+  right: 8%;
+}
+
+.orb-3 {
+  width: 240px;
+  height: 240px;
+  background: #ec4899;
+  top: 50%;
+  right: 22%;
+}
+/* ===== ASTRO HERO IMAGE ===== */
+.astro-hero-image {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0, 255, 255, 0.15);
+}
+
+.astro-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75) contrast(1.1);
+}
+
+/* DARK + COSMIC OVERLAY */
+.astro-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(10, 0, 30, 0.4),
+    rgba(5, 0, 20, 0.85)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.astro-hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff00ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+}
+
+.astro-hero-overlay p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  max-width: 600px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .astro-hero-image {
+    height: 50vh;
+  }
+
+  .astro-hero-overlay h1 {
+    font-size: 2.1rem;
+  }
+
+  .astro-hero-overlay p {
+    font-size: 1rem;
+  }
+}
+.astro-section {
+  width: 100%;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* HEADING */
+.astro-description {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #ffffff !important;   /* ✅ force white */
+  opacity: 0.95;
+  text-align: justify;
+}
+
+
+/* SUB HEADING */
+.astro-subheading {
+  font-size: 1.2rem;
+  color: #d6c7ff;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+/* IMAGE CONTAINER */
+.astro-hero-image {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+  background: radial-gradient(circle at center, #3a1c71, #000);
+}
+
+/* IMAGE */
+.astro-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 28px;
+  transition: transform 0.6s ease;
+}
+
+/* SUBTLE HOVER (PRO LOOK) */
+.astro-hero-image:hover img {
+  transform: scale(1.06);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .astro-heading {
+    font-size: 2.2rem;
+
+  }
+
+  .astro-subheading {
+    font-size: 1rem;
+  }
+
+  .astro-hero-image {
+    max-width: 95%;
+  }
+}
+.astro-section {
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+/* FLEX WRAPPER */
+.astro-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+}
+
+/* LEFT IMAGE */
+.astro-image {
+  flex: 1;
+}
+
+.astro-image img {
+  width: 100%;
+  max-width: 400px;
+
+  height: 360px;              /* ⬅️ height chhoti */
+  object-fit: cover;          /* image crop ho kar fit hogi */
+
+  border-radius: 30px;
+  box-shadow: 0 25px 70px rgba(0, 255, 255, 0.22);
+  filter: brightness(0.8) contrast(1.1);
+}
+
+
+/* RIGHT CONTENT */
+.astro-content {
+  flex: 1;
+}
+
+/* HEADING */
+.astro-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff00ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: WHITE;
+  margin-bottom: 0.4rem;
+}
+
+/* KARM LINE */
+.astro-karm {
+  font-size: 1.4rem;
+  color: #ffd6ff;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* DESCRIPTION */
+.astro-description {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #e6e6e6;
+  text-align: justify;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .astro-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .astro-description {
+    text-align: center;
+  }
+
+  .astro-image img {
+    max-width: 420px;
+  }
+}
+.astro-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 25px 70px rgba(0, 255, 255, 0.22);
+  filter: brightness(0.85) contrast(1.1);
+}

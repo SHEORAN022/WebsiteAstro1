@@ -1,0 +1,155 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(12px);
+  justify-content: flex-end;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ================= LOGIN BUTTON ================= */
+.login-btn {
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #ff5500;
+}
+
+/* ================= PROFILE ICON ================= */
+.profile-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.profile-box:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+.profile-icon {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+
+/* ================= PROFILE MENU (COMPACT) ================= */
+.profile-menu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+
+  width: 170px;
+  max-height: 320px;
+  overflow-y: auto;
+
+  background: rgba(18, 18, 18, 0.96);
+  backdrop-filter: blur(14px);
+  border-radius: 10px;
+
+  padding: 4px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  z-index: 9999;
+
+  animation: fadeIn 0.2s ease;
+}
+
+/* ================= MENU ITEMS ================= */
+.profile-menu a,
+.profile-menu .logout-btn {
+  display: block;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  line-height: 1.3;
+  color: #ddd;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  white-space: normal;
+}
+
+.profile-menu a:hover,
+.profile-menu .logout-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* ================= DIVIDER ================= */
+.menu-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 4px 8px;
+}
+
+/* ================= LOGOUT ================= */
+.logout-btn {
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ================= SCROLLBAR (SMALL & CLEAN) ================= */
+.profile-menu::-webkit-scrollbar {
+  width: 5px;
+}
+.profile-menu::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 480px) {
+  .profile-menu {
+    width: 160px;
+    max-height: 280px;
+  }
+
+  .profile-menu a,
+  .logout-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

@@ -1,0 +1,119 @@
+.remedy-journey-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1f, #1a0b2e, #0f0520);
+  position: relative;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* FLOATING ORBS */
+.floating-orbs .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+}
+.orb-1 { width: 260px; height: 260px; background: #9333ea; top: 10%; left: 5%; }
+.orb-2 { width: 320px; height: 320px; background: #3b82f6; bottom: 15%; right: 10%; }
+.orb-3 { width: 220px; height: 220px; background: #ec4899; top: 50%; right: 25%; }
+
+/* CONTENT */
+.remedy-content {
+  position: relative;
+  z-index: 5;
+  padding: 6rem 8%;
+}
+
+.remedy-header h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.remedy-header p {
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.5rem;
+}
+
+.loading-text,
+.empty-text {
+  color: white;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+/* GRID */
+.remedy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* CARD */
+.remedy-card {
+  background: rgba(255,255,255,0.07);
+  border-radius: 25px;
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 30px rgba(147,51,234,0.25);
+  transition: 0.35s;
+  color: white;
+}
+.remedy-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 45px rgba(147,51,234,0.45);
+}
+
+.remedy-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: white;
+}
+
+.remedy-type {
+  margin-top: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.status-msg {
+  margin-top: 0.8rem;
+}
+.status-msg.success { color: #22c55e; }
+.status-msg.warning { color: #f59e0b; }
+.status-msg.danger { color: #ef4444; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .remedy-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .remedy-grid { grid-template-columns: 1fr; }
+  .remedy-header h1 { font-size: 2.3rem; }
+}

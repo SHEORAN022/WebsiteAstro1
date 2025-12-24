@@ -1,0 +1,159 @@
+/* ================================
+   🌌 COSMIC BACKGROUND (AUTH STYLE)
+================================ */
+.booking-page {
+  min-height: 100vh;
+  padding: 5rem 6%;
+  background: linear-gradient(180deg, #1a0033 0%, #0d001a 100%);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ⭐ STARFIELD */
+.booking-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.booking-star {
+  position: absolute;
+  background: #ffffffaa;
+  border-radius: 50%;
+  animation: starsTwinkle 3s infinite ease-in-out;
+}
+
+@keyframes starsTwinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+/* 🌈 FLOATING ORBS */
+.booking-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.booking-orb1 {
+  width: 260px;
+  height: 260px;
+  background: #9333ea;
+  top: 12%;
+  left: 8%;
+}
+
+.booking-orb2 {
+  width: 320px;
+  height: 320px;
+  background: #3b82f6;
+  bottom: 15%;
+  right: 10%;
+}
+
+/* ================================
+   🔮 MAIN CONTENT
+================================ */
+.booking-wrapper {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  z-index: 5;
+}
+
+.booking-title {
+  font-size: 2.7rem;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card List */
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Empty State */
+.empty-booking-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  z-index: 5;
+}
+
+.empty-img {
+  width: 110px;
+  opacity: 0.9;
+}
+
+/* Booking Card */
+.modern-booking-card {
+  background: rgba(255,255,255,0.08);
+  padding: 22px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.modern-booking-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(255, 0, 255, 0.35);
+}
+
+/* Header */
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.status-success { background: #d9f7d9; color: #176b18; }
+.status-pending { background: #fff3cd; color: #856404; }
+.status-cancel { background: #f8d7da; color: #721c24; }
+
+/* Details */
+.booking-details {
+  margin-top: 15px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.amount-row, .date-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
